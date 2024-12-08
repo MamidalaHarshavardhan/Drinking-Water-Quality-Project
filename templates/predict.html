@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Water Quality Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="ph">pH:</label>
+        <select id="ph" name="ph" required>
+            {% for value in dropdown_data['ph'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="hardness">Hardness:</label>
+        <select id="hardness" name="hardness" required>
+            {% for value in dropdown_data['hardness'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="solids">Solids:</label>
+        <select id="solids" name="solids" required>
+            {% for value in dropdown_data['solids'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="chloramines">Chloramines:</label>
+        <select id="chloramines" name="chloramines" required>
+            {% for value in dropdown_data['chloramines'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="sulfate">Sulfate:</label>
+        <select id="sulfate" name="sulfate" required>
+            {% for value in dropdown_data['sulfate'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="conductivity">Conductivity:</label>
+        <select id="conductivity" name="conductivity" required>
+            {% for value in dropdown_data['conductivity'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="organic_carbon">Organic Carbon:</label>
+        <select id="organic_carbon" name="organic_carbon" required>
+            {% for value in dropdown_data['organic_carbon'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="trihalomethanes">Trihalomethanes:</label>
+        <select id="trihalomethanes" name="trihalomethanes" required>
+            {% for value in dropdown_data['trihalomethanes'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="turbidity">Turbidity:</label>
+        <select id="turbidity" name="turbidity" required>
+            {% for value in dropdown_data['turbidity'] %}
+            <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
